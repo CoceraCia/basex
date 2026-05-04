@@ -34,15 +34,15 @@ public class BaseXService {
         try (ClientSession session = new ClientSession(HOST, PORT, USER, PASSWORD);) {
             try {
                 session.execute("DROP DB " + DB_NAME);
-                System.out.println("Existing 'AutoresDB' removed.");
+                System.out.println("Existing database removed.");
             } catch (Exception ignored) {
-                System.out.println("'AutoresDB' did not exist. Creating it now.");
+                System.out.println("Creating database it now.");
             }
 
             String xmlInline = AUTHORS_XML.replace("\n", "");
             String createCommand = "CREATE DB " + DB_NAME + " \"" + xmlInline + "\"";
             session.execute(createCommand);
-            System.out.println("Database 'AutoresDB' created with initial XML.");
+            System.out.println("Database created with initial XML.");
         }
     }
 
@@ -60,7 +60,7 @@ public class BaseXService {
         try (ClientSession session = new ClientSession(HOST, PORT, USER, PASSWORD);) {
             String updateQuery = "insert node <premios>2</premios> into db:get('AutoresDB')/autores/autor[@id='1']";
             session.execute("XQUERY " + updateQuery);
-            System.out.println("Update applied: <premios>2</premios> added to author id=1.");
+            System.out.println("Premios applied.");
         }
     }
 

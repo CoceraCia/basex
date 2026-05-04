@@ -41,7 +41,7 @@ public class Main {
         System.out.println("1. Connect to BaseX");
         System.out.println("2. Create AutoresDB");
         System.out.println("3. Query Authors");
-        System.out.println("4. Add Premios to author id=1");
+        System.out.println("4. Add Premios to author");
         System.out.println("5. Show Database");
         System.out.println("6. Exit");
         System.out.print("Select an option: ");
